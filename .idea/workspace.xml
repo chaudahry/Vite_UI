@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="76ca4300-3f65-459d-9881-81b56dba5443" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.bolt/config.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.bolt/prompt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/resume_matcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resume_matcher.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/text_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/text_extractor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/text_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/text_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/0b2aed8f-8ec4-432a-b261-6215543ae02a_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/8290305b-ae4a-48f0-9f50-188e2cef64db_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/uploads/aaab39ea-c91a-41ed-93e6-c7dc3b8f4149_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-CeGNxZWE.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/assets/index-DQpTAsbI.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AppRouter.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthChoice.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AuthPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CandidateResults.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ConfirmationModal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Dashboard.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FileUpload.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/HRInfo.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/JobDescription.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/JobSetup.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LandingPage.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/LoadingOverlay.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/OTPVerification.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PasswordReset.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResumeUpload.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ResumeViewModal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignIn.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SignUp.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TopNSelection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/AppContext.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/api.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validation.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vite-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tsconfig.node.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vite.config.ts.timestamp-1751711848971-821d760884893.mjs" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2zsKdUh9t9orRU7wVasYuxQ8GEx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\c data\PycharmProjects\AI Resume Screener\frontend" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-975db3bf15a3-31b6be0877a2-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.18034.82" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76ca4300-3f65-459d-9881-81b56dba5443" name="Changes" comment="" />
+      <created>1752514428613</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1752514428613</updated>
+    </task>
+    <servers />
+  </component>
+</project>
