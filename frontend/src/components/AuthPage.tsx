@@ -4,9 +4,10 @@ import {
   CheckCircle, AlertCircle, Sparkles, Zap, Key
 } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { authAPI } from '../utils/api';
 
 const AuthPage: React.FC = () => {
-  const { setCurrentPage, login, register } = useApp();
+  const { setCurrentPage, setUser, setIsAuthenticated, setOtpAction } = useApp();
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -101,30 +102,53 @@ const AuthPage: React.FC = () => {
     setIsLoading(true);
     try {
       if (isLogin) {
-        const success = await login(formData.email, formData.password);
-        if (!success) {
-          setErrors({ email: 'Invalid email or password' });
-        }
-      } else {
-        // Mock signup with OTP
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        const userData = {
-          id: Date.now().toString(),
+        const response = await authAPI.login({
           email: formData.email,
-          phone: formData.phone,
-          role: 'HR Manager',
-          department: 'Human Resources'
+          password: formData.password
+        });
+
+        if (response.token) {
+          localStorage.setItem('epochfolio_token', response.token);
+        }
+
+        const userData = {
+          id: response.user_id,
+          user_id: response.user_id,
+          email: response.email,
+          name: response.name,
+          role: response.role,
+          hrId: response.hr_id,
+          department: response.department,
+          position: response.position
         };
         
-        setPendingUser(userData);
+        setUser(userData);
+        localStorage.setItem('epochfolio_user', JSON.stringify(userData));
+        setIsAuthenticated(true);
+        
+        if (response.role_set) {
+          setCurrentPage('dashboard');
+        } else {
+          setCurrentPage('userInfo');
+        }
+      } else {
+        const response = await authAPI.signup({
+          email: formData.email,
+          phone: formData.phone,
+          password: formData.password
+        });
+        
+        setPendingUser({
+          email: formData.email,
+          user_id: response.user_id
+        });
         setOtpSent(true);
         setOtpType('signup');
         setErrors({});
       }
-    } catch (error) {
+    } catch (error: any) {
       setErrors({ 
-        email: 'An error occurred. Please try again.' 
+        email: error.message || 'An error occurred. Please try again.' 
       });
     } finally {
       setIsLoading(false);
@@ -141,25 +165,44 @@ const AuthPage: React.FC = () => {
 
     setIsLoading(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await authAPI.verifyOTP({
+        email: otpType === 'signup' ? pendingUser?.email : resetEmail,
+        otp,
+        action: otpType
+      });
       
-      if (otp === '123456') {
-        if (otpType === 'signup') {
-          // After successful OTP verification, go to user info collection
+      if (otpType === 'signup') {
+        const userData = {
+          id: response.user_id,
+          user_id: response.user_id,
+          email: response.email,
+          name: response.name,
+          role: response.role,
+          hrId: response.hr_id,
+          department: response.department,
+          position: response.position
+        };
+        
+        setUser(userData);
+        localStorage.setItem('epochfolio_user', JSON.stringify(userData));
+        
+        if (response.role_set) {
+          setIsAuthenticated(true);
+          setCurrentPage('dashboard');
+        } else {
           setCurrentPage('userInfo');
-          setOtpSent(false);
-          setPendingUser(null);
-          setOtp('');
-        } else if (otpType === 'reset') {
-          setOtpSent(false);
-          setShowPasswordReset(true);
-          setOtp('');
         }
-      } else {
-        setErrors({ otp: 'Invalid OTP. Please try again.' });
+        
+        setOtpSent(false);
+        setPendingUser(null);
+        setOtp('');
+      } else if (otpType === 'reset') {
+        setOtpSent(false);
+        setShowPasswordReset(true);
+        setOtp('');
       }
-    } catch (error) {
-      setErrors({ otp: 'Verification failed. Please try again.' });
+    } catch (error: any) {
+      setErrors({ otp: error.message || 'Verification failed. Please try again.' });
     } finally {
       setIsLoading(false);
     }
@@ -175,16 +218,15 @@ const AuthPage: React.FC = () => {
 
     setIsLoading(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await authAPI.forgotPassword(formData.forgotEmail);
       
       setResetEmail(formData.forgotEmail);
       setOtpSent(true);
       setOtpType('reset');
       setShowForgotPassword(false);
       setErrors({});
-      alert(`OTP sent to ${formData.forgotEmail} for password reset verification`);
-    } catch (error) {
-      setErrors({ forgotEmail: 'Failed to send OTP. Please try again.' });
+    } catch (error: any) {
+      setErrors({ forgotEmail: error.message || 'Failed to send OTP. Please try again.' });
     } finally {
       setIsLoading(false);
     }
@@ -197,9 +239,10 @@ const AuthPage: React.FC = () => {
 
     setIsLoading(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      alert(`Password successfully reset for ${resetEmail}`);
+      await authAPI.resetPassword({
+        email: resetEmail,
+        new_password: formData.newPassword
+      });
       
       setShowPasswordReset(false);
       setResetEmail('');
@@ -214,8 +257,8 @@ const AuthPage: React.FC = () => {
       });
       setErrors({});
       setIsLogin(true);
-    } catch (error) {
-      setErrors({ newPassword: 'Failed to reset password. Please try again.' });
+    } catch (error: any) {
+      setErrors({ newPassword: error.message || 'Failed to reset password. Please try again.' });
     } finally {
       setIsLoading(false);
     }
@@ -465,7 +508,7 @@ const AuthPage: React.FC = () => {
                 <p className="text-gray-600">
                   We've sent a 6-digit code to <br />
                   <span className="font-semibold text-blue-600">
-                    {otpType === 'signup' ? formData.email : resetEmail}
+                    {otpType === 'signup' ? pendingUser?.email : resetEmail}
                   </span>
                 </p>
               </div>
@@ -520,7 +563,13 @@ const AuthPage: React.FC = () => {
                   Didn't receive the code?
                   <button
                     type="button"
-                    onClick={() => alert('OTP resent!')}
+                    onClick={() => {
+                      if (otpType === 'signup') {
+                        handleSubmit(new Event('submit') as any);
+                      } else {
+                        handleForgotPassword(new Event('submit') as any);
+                      }
+                    }}
                     className="ml-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
                   >
                     Resend
@@ -533,11 +582,6 @@ const AuthPage: React.FC = () => {
                 >
                   {otpType === 'signup' ? 'Back to signup' : 'Back to sign in'}
                 </button>
-              </div>
-
-              <div className="mt-6 p-4 bg-blue-50 rounded-xl border border-blue-200">
-                <div className="text-xs text-blue-800 font-semibold mb-1">Demo OTP:</div>
-                <div className="text-xs text-blue-700">Use: 123456</div>
               </div>
             </div>
           </div>

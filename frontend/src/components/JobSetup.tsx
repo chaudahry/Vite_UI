@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import { Briefcase, Plus, X, ArrowRight, ArrowLeft, Sparkles, Target, Users, Clock } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { jobAPI } from '../utils/api';
 
 const JobSetup: React.FC = () => {
-  const { setJobRequirement, setCurrentStep, user } = useApp();
+  const { 
+    setJobRequirement, 
+    setCurrentJobId,
+    setCurrentStep, 
+    user,
+    setLoading,
+    setLoadingMessage
+  } = useApp();
+  
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -97,24 +106,51 @@ const JobSetup: React.FC = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!validateForm()) return;
 
-    const jobRequirement = {
-      id: '1',
-      title: formData.title,
-      description: formData.description,
-      skills,
-      experience: formData.experience,
-      department: formData.department,
-      location: formData.location,
-      jobType: formData.jobType
-    };
+    if (!user?.user_id) {
+      setErrors({ title: 'User session expired. Please login again.' });
+      return;
+    }
 
-    setJobRequirement(jobRequirement);
-    setCurrentStep(1); // Move to next step (File Upload)
+    setLoading(true);
+    setLoadingMessage('Creating job requirements...');
+
+    try {
+      const response = await jobAPI.createJob({
+        user_id: user.user_id,
+        job_title: formData.title,
+        job_description: formData.description,
+        department: formData.department,
+        skills,
+        experience_required: formData.experience,
+        location: formData.location,
+        job_type: formData.jobType
+      });
+
+      const jobRequirement = {
+        id: response.job_id,
+        job_id: response.job_id,
+        title: formData.title,
+        description: formData.description,
+        skills,
+        experience: formData.experience,
+        department: formData.department,
+        location: formData.location,
+        jobType: formData.jobType
+      };
+
+      setJobRequirement(jobRequirement);
+      setCurrentJobId(response.job_id);
+      setCurrentStep(1); // Move to next step (File Upload)
+    } catch (error: any) {
+      setErrors({ title: error.message || 'Failed to create job requirements. Please try again.' });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -322,13 +358,13 @@ const JobSetup: React.FC = () => {
                   <input
                     type="text"
                     name="department"
-                    value={user?.department || ''}
-                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl bg-gray-50 text-gray-600"
-                    disabled
-                    placeholder="Department from your profile"
+                    value={formData.department}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500/20 transition-all duration-200"
+                    placeholder="Department"
                   />
                   <div className="text-xs text-gray-500 mt-1">
-                    This is set from your profile information
+                    From your profile: {user?.department}
                   </div>
                 </div>
               </div>
@@ -337,7 +373,7 @@ const JobSetup: React.FC = () => {
               <div className="flex flex-col sm:flex-row gap-4 pt-6">
                 <button
                   type="button"
-                  onClick={() => setCurrentStep(-1)} // Go back to previous step if needed
+                  onClick={() => setCurrentStep(-1)}
                   className="flex items-center justify-center gap-2 px-6 py-3 bg-gray-100 text-gray-700 rounded-xl hover:bg-gray-200 transition-colors font-semibold order-2 sm:order-1"
                 >
                   <ArrowLeft size={20} />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart3, Download, Eye, Filter, RotateCcw, Users, FileDown, Archive, ArrowLeft, Star, TrendingUp } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { resumeAPI, dashboardAPI } from '../utils/api';
 
 const CandidateResults: React.FC = () => {
   const { 
@@ -11,7 +12,10 @@ const CandidateResults: React.FC = () => {
     setShowModal,
     setModalData,
     setCurrentStep,
-    jobRequirement
+    jobRequirement,
+    currentJobId,
+    setLoading,
+    setLoadingMessage
   } = useApp();
 
   const [filters, setFilters] = useState({
@@ -21,10 +25,21 @@ const CandidateResults: React.FC = () => {
     showTop: 10
   });
   const [showingAll, setShowingAll] = useState(false);
+  const [dashboardStats, setDashboardStats] = useState<any>(null);
 
   useEffect(() => {
     applyFilters();
+    loadDashboardStats();
   }, [candidates, filters, showingAll]);
+
+  const loadDashboardStats = async () => {
+    try {
+      const stats = await dashboardAPI.getHiringStats();
+      setDashboardStats(stats);
+    } catch (error) {
+      console.error('Failed to load dashboard stats:', error);
+    }
+  };
 
   const applyFilters = () => {
     let filtered = candidates.filter(candidate => {
@@ -49,40 +64,131 @@ const CandidateResults: React.FC = () => {
     }));
   };
 
-  const viewResume = (candidate: any) => {
-    setModalData({
-      type: 'resume',
-      title: `${candidate.filename.split('.')[0]} - Resume`,
-      content: candidate.rawText || 'Resume content not available.'
-    });
-    setShowModal('resume');
+  const viewResume = async (candidate: any) => {
+    if (!candidate.resume_id) {
+      setModalData({
+        title: `${candidate.filename.split('.')[0]} - Resume`,
+        content: candidate.rawText || 'Resume content not available.'
+      });
+      setShowModal('resume');
+      return;
+    }
+
+    setLoading(true);
+    setLoadingMessage('Loading resume content...');
+
+    try {
+      const response = await resumeAPI.getResumeContent(candidate.resume_id);
+      setModalData({
+        title: `${candidate.filename.split('.')[0]} - Resume`,
+        content: response.content || 'Resume content not available.'
+      });
+      setShowModal('resume');
+    } catch (error: any) {
+      alert(error.message || 'Failed to load resume content.');
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const downloadResume = (candidate: any) => {
-    // Mock download functionality
-    alert(`Downloading ${candidate.filename}...`);
+  const downloadResume = async (candidate: any) => {
+    if (!candidate.resume_id) {
+      alert('Resume download not available for this candidate.');
+      return;
+    }
+
+    setLoading(true);
+    setLoadingMessage('Preparing download...');
+
+    try {
+      const response = await resumeAPI.downloadResume(candidate.resume_id);
+      
+      // Create download link
+      const blob = new Blob([response], { type: 'application/octet-stream' });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = candidate.filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error: any) {
+      alert(error.message || 'Failed to download resume.');
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const downloadAllFiltered = () => {
+  const downloadAllFiltered = async () => {
     if (filteredCandidates.length === 0) {
       alert('No candidates to download.');
       return;
     }
-    
-    // Create a mock download
-    const candidateNames = filteredCandidates.map(c => c.filename).join(', ');
-    alert(`Downloading ${filteredCandidates.length} filtered resumes:\n${candidateNames.substring(0, 100)}${candidateNames.length > 100 ? '...' : ''}`);
-  };
 
-  const downloadAllResumes = () => {
-    if (uploadedFiles.length === 0) {
-      alert('No resumes to download.');
+    if (!currentJobId) {
+      alert('Job ID not found. Cannot download filtered resumes.');
       return;
     }
+
+    setLoading(true);
+    setLoadingMessage('Preparing filtered resumes download...');
     
-    // Create a mock download of all uploaded resumes
-    const fileNames = uploadedFiles.map(f => f.name).join(', ');
-    alert(`Downloading all ${uploadedFiles.length} uploaded resumes:\n${fileNames.substring(0, 100)}${fileNames.length > 100 ? '...' : ''}`);
+    try {
+      const resumeIds = filteredCandidates
+        .filter(c => c.resume_id)
+        .map(c => c.resume_id);
+
+      const response = await resumeAPI.downloadFilteredResumes({
+        job_id: currentJobId,
+        resume_ids: resumeIds,
+        filters: filters
+      });
+
+      // Create download link for zip file
+      const blob = new Blob([response], { type: 'application/zip' });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `filtered_resumes_${new Date().toISOString().split('T')[0]}.zip`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error: any) {
+      alert(error.message || 'Failed to download filtered resumes.');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const downloadAllResumes = async () => {
+    if (!currentJobId) {
+      alert('Job ID not found. Cannot download all resumes.');
+      return;
+    }
+
+    setLoading(true);
+    setLoadingMessage('Preparing all resumes download...');
+    
+    try {
+      const response = await resumeAPI.downloadAllResumes(currentJobId);
+
+      // Create download link for zip file
+      const blob = new Blob([response], { type: 'application/zip' });
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `all_resumes_${new Date().toISOString().split('T')[0]}.zip`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error: any) {
+      alert(error.message || 'Failed to download all resumes.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const restartProcess = () => {
@@ -145,7 +251,7 @@ const CandidateResults: React.FC = () => {
               <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center text-white mx-auto mb-3 shadow-lg">
                 <Users size={24} />
               </div>
-              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">{uploadedFiles.length}</div>
+              <div className="text-2xl md:text-3xl font-bold text-gray-900 mb-1">{candidates.length}</div>
               <div className="text-gray-600 text-sm font-medium">Total Resumes</div>
             </div>
             <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 text-center shadow-lg border border-gray-100/50">
@@ -278,8 +384,8 @@ const CandidateResults: React.FC = () => {
               className="flex items-center gap-2 px-4 md:px-6 py-3 bg-purple-100 text-purple-700 rounded-xl hover:bg-purple-200 transition-colors font-semibold"
             >
               <Archive size={16} />
-              <span className="hidden sm:inline">All Resumes ({uploadedFiles.length})</span>
-              <span className="sm:hidden">All ({uploadedFiles.length})</span>
+              <span className="hidden sm:inline">All Resumes ({candidates.length})</span>
+              <span className="sm:hidden">All ({candidates.length})</span>
             </button>
             <button 
               onClick={restartProcess} 
@@ -380,7 +486,7 @@ const CandidateResults: React.FC = () => {
           )}
 
           {/* Download Summary */}
-          {(filteredCandidates.length > 0 || uploadedFiles.length > 0) && (
+          {(filteredCandidates.length > 0 || candidates.length > 0) && (
             <div className="mt-8 md:mt-12 mx-4 md:mx-0">
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-3xl p-6 md:p-8 border border-blue-200">
                 <h4 className="font-bold text-gray-900 mb-4 flex items-center gap-2 text-lg">
@@ -393,8 +499,8 @@ const CandidateResults: React.FC = () => {
                     <span className="font-bold text-blue-600">{filteredCandidates.length} resumes</span>
                   </div>
                   <div className="flex justify-between items-center p-4 bg-white rounded-xl shadow-sm">
-                    <span className="text-gray-700 font-medium">All Uploaded:</span>
-                    <span className="font-bold text-purple-600">{uploadedFiles.length} resumes</span>
+                    <span className="text-gray-700 font-medium">All Screened:</span>
+                    <span className="font-bold text-purple-600">{candidates.length} resumes</span>
                   </div>
                 </div>
                 <div className="mt-4 p-4 bg-white/50 rounded-xl">

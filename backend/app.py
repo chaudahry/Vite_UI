@@ -312,17 +312,17 @@ def reset_password():
         return jsonify({"message": f"An error occurred during password reset: {str(e)}"}), 500
 
 
-@app.route('/api/select_role', methods=['POST'])
+@app.route('/api/select_role', methods=['POST', 'PUT'])
 def select_role():
     data = request.json
-    user_id = data.get('user_id')
+    email = data.get('email')
     role = data.get('role')
-    hr_id = data.get('hr_id')
     full_name = data.get('full_name')
+    hr_id = data.get('hr_id')
     position = data.get('position')
     department = data.get('department')
 
-    if not user_id:
+    if not email:
         return jsonify({"message": "User ID is required"}), 400
 
     if not supabase:
@@ -337,10 +337,10 @@ def select_role():
             'position': position,
             'department': department
         }
-        response = supabase.table('users').update(update_data).eq('id', user_id).execute()
+        response = supabase.table('users').update(update_data).eq('email', email).execute()
 
         if response.data:
-            return jsonify({"message": f"Role '{role}' and HR info updated for {user_id}"}), 200
+            return jsonify({"message": f"Role '{role}' and HR info updated for {email}"}), 200
         else:
             return jsonify({"message": "User not found or failed to update"}), 404
 

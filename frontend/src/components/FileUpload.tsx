@@ -1,17 +1,20 @@
 import React, { useRef, useState } from 'react';
 import { Upload, File, X, ArrowLeft, ArrowRight, Cloud, Zap, Shield, CheckCircle, AlertCircle } from 'lucide-react';
 import { useApp } from '../context/AppContext';
+import { resumeAPI } from '../utils/api';
 
 const FileUpload: React.FC = () => {
   const { 
     uploadedFiles, 
     setUploadedFiles, 
+    setUploadedResumeIds,
     setCurrentStep, 
     setCandidates,
     setFilteredCandidates,
     setLoading,
     setLoadingMessage,
-    jobRequirement
+    jobRequirement,
+    currentJobId
   } = useApp();
   
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -88,40 +91,44 @@ const FileUpload: React.FC = () => {
       return;
     }
 
+    if (!currentJobId) {
+      alert('Job requirements not found. Please go back and set up the job first.');
+      return;
+    }
+
     setLoading(true);
-    setLoadingMessage('Processing resumes with AI...');
+    setLoadingMessage('Uploading resumes...');
 
     try {
       // Simulate upload progress
-      for (let i = 0; i <= 100; i += 10) {
+      for (let i = 0; i <= 50; i += 10) {
         setUploadProgress(i);
-        await new Promise(resolve => setTimeout(resolve, 200));
+        await new Promise(resolve => setTimeout(resolve, 100));
       }
 
-      // Simulate processing time
-      setLoadingMessage('Analyzing resumes and matching skills...');
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Upload resumes
+      const uploadResponse = await resumeAPI.uploadResumes(uploadedFiles);
+      setUploadedResumeIds(uploadResponse.resume_ids);
 
-      // Mock candidate data generation with more realistic data
-      const mockCandidates = uploadedFiles.map((file, index) => ({
-        id: `candidate-${index}`,
-        filename: file.name,
-        matchScore: Math.floor(Math.random() * 40) + 60, // 60-100%
-        matchedSkills: jobRequirement?.skills?.slice(0, Math.floor(Math.random() * 5) + 2) || ['JavaScript', 'React', 'Node.js'],
-        category: ['Engineering', 'Design', 'Marketing', 'Sales', 'Product', 'Data Science'][Math.floor(Math.random() * 6)],
-        experience: ['Entry', 'Mid', 'Senior', 'Expert'][Math.floor(Math.random() * 4)],
-        location: ['San Francisco', 'New York', 'Remote', 'Seattle', 'Austin'][Math.floor(Math.random() * 5)],
-        rawText: `Mock resume content for ${file.name.split('.')[0]}...\n\nExperience:\n- Software Engineer at Tech Company\n- Full-stack development\n- Team leadership\n\nSkills:\n- Programming languages\n- Cloud technologies\n- Agile methodologies`
-      }));
+      // Update progress
+      setUploadProgress(75);
+      setLoadingMessage('Processing and screening resumes...');
+
+      // Screen resumes
+      const screenResponse = await resumeAPI.screenResumes({
+        job_id: currentJobId,
+        resume_ids: uploadResponse.resume_ids
+      });
 
       // Sort by match score
-      mockCandidates.sort((a, b) => b.matchScore - a.matchScore);
+      const sortedCandidates = screenResponse.results.sort((a: any, b: any) => b.match_score - a.match_score);
 
-      setCandidates(mockCandidates);
-      setFilteredCandidates(mockCandidates);
+      setCandidates(sortedCandidates);
+      setFilteredCandidates(sortedCandidates);
+      setUploadProgress(100);
       setCurrentStep(2);
-    } catch (error) {
-      alert('An error occurred while processing resumes. Please try again.');
+    } catch (error: any) {
+      alert(error.message || 'An error occurred while processing resumes. Please try again.');
     } finally {
       setLoading(false);
       setUploadProgress(0);

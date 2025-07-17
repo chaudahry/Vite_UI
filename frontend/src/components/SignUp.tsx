@@ -45,7 +45,6 @@ const SignUp: React.FC = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-      console.log('🟣 Signup form submitted');
     e.preventDefault();
     
     // Clear previous errors
