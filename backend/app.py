@@ -585,6 +585,10 @@ def catch_all(path):
     # For Render, ensure static files are served by the web server (e.g., Nginx) or Flask's static handler
     return 'Page not found', 404
 
+# Home route to check if backend is running
+@app.route('/')
+def home():
+    return "Backend is running!"
 
 if __name__ == "__main__":
     # Use environment variable for PORT, default to 5000
