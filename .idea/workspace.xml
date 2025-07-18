@@ -5,27 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76ca4300-3f65-459d-9881-81b56dba5443" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/AI Resume Screener.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AI Resume Screener.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/resume_matcher.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/resume_matcher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/runtime.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/runtime.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/text_extractor.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/text_extractor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/text_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/text_processor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AuthPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AuthPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/CandidateResults.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CandidateResults.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/FileUpload.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/FileUpload.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/JobSetup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/JobSetup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SignUp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/HRInfo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/HRInfo.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/UserInfoCollection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserInfoCollection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/context/AppContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/AppContext.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

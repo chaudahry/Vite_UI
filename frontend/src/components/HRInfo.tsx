@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FileText, ArrowLeft, ArrowRight, User, Building, Briefcase, Car as IdCard, Shield, CheckCircle, Sparkles } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 
+
 const HRInfo: React.FC = () => {
   const { 
     setCurrentPage, 
@@ -87,7 +88,7 @@ const HRInfo: React.FC = () => {
       position: formData.position,
       department: formData.department
     };
-    
+
     setUser(updatedUser);
     localStorage.setItem('epochfolio_user', JSON.stringify(updatedUser));
     setIsAuthenticated(true);

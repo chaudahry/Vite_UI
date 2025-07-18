@@ -7,7 +7,7 @@ const UserInfoCollection: React.FC = () => {
   const { setCurrentPage, user, setUser, setIsAuthenticated, setLoading, setLoadingMessage } = useApp();
   
   const [formData, setFormData] = useState({
-    fullName: user?.name || '',
+    full_name: user?.name || '',
     department: user?.department || '',
     position: user?.position || '',
     hrId: user?.hrId || ''
@@ -72,7 +72,7 @@ const UserInfoCollection: React.FC = () => {
     try {
       const response = await userAPI.updateProfile({
         email: user.email,
-        name: formData.fullName,
+        full_name: formData.fullName,
         hr_id: formData.hrId,
         position: formData.position,
         department: formData.department
@@ -81,7 +81,7 @@ const UserInfoCollection: React.FC = () => {
       // Update user with collected information
       const updatedUser = {
         ...user,
-        name: formData.fullName,
+        full_name: formData.fullName,
         department: formData.department,
         position: formData.position,
         hrId: formData.hrId,
