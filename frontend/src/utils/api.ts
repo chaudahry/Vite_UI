@@ -85,7 +85,7 @@ export const authAPI = {
 
   // Logout and clear session
   logout: () =>
-    apiCall('/logout', {
+    apiCall('/clear_session_data', {
       method: 'POST',
     }),
 };
@@ -209,8 +209,11 @@ export const resumeAPI = {
   getResumeContent: (resumeId: string) =>
     apiCall(`/resume/${resumeId}`),
 
-  downloadResume: (resumeId: string) =>
-    apiCall(`/download_resume/${resumeId}`),
+  downloadResume: (data: { resumeId: string; filepath: string }) =>
+  apiCall(`/download_resume`, {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }),
 
   // Download all filtered resumes
   downloadFilteredResumes: (data: {
@@ -225,7 +228,7 @@ export const resumeAPI = {
 
   // Download all resumes as zip
   downloadAllResumes: (jobId: string) =>
-    apiCall(`/download_all_filtered_resumes/${jobId}`),
+    apiCall(`/download_all_resumes/${jobId}`),
 
   // Get resume statistics
   getResumeStats: (jobId: string) =>
@@ -239,21 +242,21 @@ export const dashboardAPI = {
 
   // Get recent activities
   getRecentActivities: () =>
-    apiCall('/dashboard/activities'),
+    apiCall('/dashboard_data'),
 
   // Get hiring statistics
   getHiringStats: (timeframe?: string) => {
     const params = timeframe ? `?timeframe=${timeframe}` : '';
-    return apiCall(`/dashboard/stats${params}`);
+    return apiCall(`/dashboard_data${params}`);
   },
 
   // Get department statistics
   getDepartmentStats: () =>
-    apiCall('/dashboard/department_stats'),
+    apiCall('/dashboard_data'),
 
   // Get user's job history
   getJobHistory: () =>
-    apiCall('/dashboard/job_history'),
+    apiCall('/dashboard_data'),
 };
 
 //export { API_BASE_URL };

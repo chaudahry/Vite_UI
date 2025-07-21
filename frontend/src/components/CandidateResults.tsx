@@ -92,7 +92,7 @@ const CandidateResults: React.FC = () => {
   };
 
   const downloadResume = async (candidate: any) => {
-    if (!candidate.resume_id) {
+    if (!candidate.resume_id || !candidate.filepath) {
       alert('Resume download not available for this candidate.');
       return;
     }
@@ -101,7 +101,10 @@ const CandidateResults: React.FC = () => {
     setLoadingMessage('Preparing download...');
 
     try {
-      const response = await resumeAPI.downloadResume(candidate.resume_id);
+      const response = await resumeAPI.downloadResume({
+      resumeId: candidate.resume_id,
+      filepath: candidate.filepath
+    });
       
       // Create download link
       const blob = new Blob([response], { type: 'application/octet-stream' });
@@ -437,12 +440,12 @@ const CandidateResults: React.FC = () => {
                   <div className="mb-4">
                     <div className="text-sm font-semibold text-gray-700 mb-2">Matched Skills:</div>
                     <div className="flex flex-wrap gap-1">
-                      {candidate.matchedSkills.slice(0, 3).map((skill, skillIndex) => (
+                      {candidate.matchedSkills && Array.isArray(candidate.matchedSkills) && candidate.matchedSkills.slice(0, 3).map((skill, skillIndex) => (
                         <span key={skillIndex} className="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">
                           {skill}
                         </span>
                       ))}
-                      {candidate.matchedSkills.length > 3 && (
+                      {candidate.matchedSkills && candidate.matchedSkills.length > 3 && (
                         <span className="text-xs text-gray-500">+{candidate.matchedSkills.length - 3}</span>
                       )}
                     </div>

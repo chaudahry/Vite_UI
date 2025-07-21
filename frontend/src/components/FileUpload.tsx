@@ -121,8 +121,30 @@ const FileUpload: React.FC = () => {
       });
 
       // Sort by match score
-      const sortedCandidates = screenResponse.results.sort((a: any, b: any) => b.match_score - a.match_score);
+      // ==================================================================
+      //          *** START: DATA TRANSFORMATION LOGIC ***
+      // Here, we map the raw API data (with snake_case) to the format
+      // our React application expects (with camelCase).
+      // ==================================================================
+      const transformedCandidates = screenResponse.results.map((apiCandidate: any) => ({
+        id: apiCandidate.resume_id,
+        filename: apiCandidate.filename,
+        filepath: apiCandidate.filepath,
+        matchScore: apiCandidate.match_score,      // Map 'match_score' to 'matchScore'
+        matchedSkills: apiCandidate.matched_skills,  // Map 'matched_skills' to 'matchedSkills'
+        category: apiCandidate.categorized_field,  // Map 'categorized_field' to 'category'
+        experience: apiCandidate.experience_level || 'Not Specified', // Provide a fallback
+        rawText: apiCandidate.raw_text,
+        resume_id: apiCandidate.resume_id          // Keep resume_id as well if needed elsewhere
+      }));
+      // ==================================================================
+      //           *** END: DATA TRANSFORMATION LOGIC ***
+      // ==================================================================
 
+
+      const sortedCandidates = transformedCandidates.sort((a, b) => b.matchScore - a.matchScore);
+
+      // Set the application state with the correctly formatted data
       setCandidates(sortedCandidates);
       setFilteredCandidates(sortedCandidates);
       setUploadProgress(100);

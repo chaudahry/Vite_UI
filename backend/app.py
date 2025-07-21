@@ -418,6 +418,12 @@ def screen_resumes():
     job_id = data.get('job_id')
     resume_ids = data.get('resume_ids')
 
+    # --- DEBUGGING STEP 1 ---
+    #print(f"--- Screening Resumes for Job ID: {job_id} ---")
+    #print(f"Received Resume IDs: {resume_ids}")
+    #print(f"Current Resumes in DB: {list(resumes_db.keys())}")
+    # -------------------------
+
     # Fetch job requirements from in-memory storage
     job_req = job_requirements_db.get(job_id)
 
@@ -434,12 +440,18 @@ def screen_resumes():
 
     for resume_id in resume_ids:
         if resume_id not in resumes_db:
+            # --- DEBUGGING STEP 2 ---
+            #print(f"WARNING: Resume ID {resume_id} not found in resumes_db. Skipping.")
+            # -------------------------
             continue
 
         resume_data = resumes_db[resume_id]
         resume_processed_text = resume_data['processed_text']
         resume_extracted_skills = resume_data['extracted_skills']
         resume_categorized_field = resume_data['categorized_field'] # New field
+        # --- DEBUGGING STEP 3 ---
+        #print(f"Processing Resume: {resume_data.get('filename')}")
+        # -------------------------
 
         # Call the enhanced match score function
         match_score, matched_skills = calculate_match_score_enhanced(
@@ -458,7 +470,9 @@ def screen_resumes():
 
         final_score = int(match_score * department_match_factor)
         final_score = min(final_score, 100) # Cap score at 100
-
+        # --- DEBUGGING STEP 4 ---
+        #print(f"Calculated Score for {resume_data.get('filename')}: {final_score}")
+        # -------------------------
         screening_results_db[resume_id] = {
             'job_id': job_id,
             'resume_id': resume_id,
@@ -471,7 +485,9 @@ def screen_resumes():
             'categorized_field': resume_categorized_field # Include categorized field
         }
         results.append(screening_results_db[resume_id])
-
+        # --- DEBUGGING STEP 5 ---
+        #print(f"--- Final Screening Results to be Sent: {results} ---")
+        # -------------------------
     return jsonify({"message": "Screening complete", "results": results}), 200
 
 
@@ -500,21 +516,54 @@ def get_dashboard_data():
     return jsonify(formatted_results), 200
 
 
-@app.route('/api/resume_raw_text/<resume_id>', methods=['GET'])
+@app.route('/api/resume/<resume_id>', methods=['GET'])
 def get_resume_raw_text(resume_id):
     if resume_id in resumes_db:
-        return jsonify({"raw_text": resumes_db[resume_id]['raw_text']}), 200
+        # IMPORTANT: The frontend expects a 'content' field, not 'raw_text'.
+        return jsonify({"content": resumes_db[resume_id]['raw_text']}), 200
     return jsonify({"message": "Resume not found"}), 404
 
+@app.route('/api/download_all_resumes/<job_id>', methods=['GET'])
+def download_all_resumes_for_job(job_id):
+    # This logic assumes you want to download all resumes associated with a screening,
+    # not just the filtered ones.
+    resumes_to_download = []
+    for resume_id, result in screening_results_db.items():
+        if result['job_id'] == job_id:
+            resumes_to_download.append(result)
 
-@app.route('/api/download_resume/<resume_id>', methods=['GET'])
-def download_resume_file(resume_id):
-    if resume_id not in resumes_db:
-        return jsonify({"message": "Resume not found"}), 404
+    if not resumes_to_download:
+        return jsonify({"message": "No resumes found for this job ID."}), 404
 
-    resume_data = resumes_db[resume_id]
-    unique_filename_on_server = resume_data['filepath']
-    original_filename = resume_data['filename']
+    memory_file = BytesIO()
+    with zipfile.ZipFile(memory_file, 'w', zipfile.ZIP_DEFLATED) as zf:
+        for resume_data in resumes_to_download:
+            unique_filename_on_server = resume_data.get('filepath')
+            original_filename = resume_data.get('filename')
+
+            if unique_filename_on_server and original_filename:
+                full_filepath = os.path.join(app.config['UPLOAD_FOLDER'], unique_filename_on_server)
+                if os.path.exists(full_filepath):
+                    zf.write(full_filepath, arcname=original_filename)
+
+    memory_file.seek(0)
+    response = make_response(memory_file.getvalue())
+    response.headers['Content-Type'] = 'application/zip'
+    response.headers['Content-Disposition'] = f'attachment; filename=all_resumes_{job_id}.zip'
+    return response
+
+@app.route('/api/download_resume', methods=['POST'])
+def download_resume_file():
+    data = request.json
+    unique_filename_on_server = data.get('filepath')
+
+    # You can still get the original filename from resumes_db if it exists,
+    # but it's better to get it from the frontend too for statelessness.
+    # For now, let's just use the unique name if original is not available.
+    original_filename = unique_filename_on_server.split('_', 1)[-1]  # A simple way to get original name
+
+    if not unique_filename_on_server:
+        return jsonify({"message": "Filepath is required"}), 400
 
     full_filepath = os.path.join(app.config['UPLOAD_FOLDER'], unique_filename_on_server)
 
@@ -525,7 +574,6 @@ def download_resume_file(resume_id):
                                    download_name=original_filename)
     else:
         return jsonify({"message": "File not found on server or invalid path"}), 404
-
 
 @app.route('/api/download_all_filtered_resumes', methods=['POST'])
 def download_all_filtered_resumes():
@@ -585,10 +633,6 @@ def catch_all(path):
     # For Render, ensure static files are served by the web server (e.g., Nginx) or Flask's static handler
     return 'Page not found', 404
 
-# Home route to check if backend is running
-@app.route('/')
-def home():
-    return "Backend is running!"
 
 if __name__ == "__main__":
     # Use environment variable for PORT, default to 5000
