@@ -107,7 +107,7 @@ const CandidateResults: React.FC = () => {
     });
       
       // Create download link
-      const blob = new Blob([response], { type: 'application/octet-stream' });
+      const blob = new Blob([response], { type: 'application/pdf' });
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
@@ -144,13 +144,25 @@ const CandidateResults: React.FC = () => {
 
       const response = await resumeAPI.downloadFilteredResumes({
         job_id: currentJobId,
-        resume_ids: resumeIds,
+        filtered_resume_ids: resumeIds,
         filters: filters
       });
-
+      //const blob = new Blob([response], { type: 'application/zip' });
       // Create download link for zip file
-      const blob = new Blob([response], { type: 'application/zip' });
-      const url = window.URL.createObjectURL(blob);
+      if (response instanceof Blob) {
+        const url = window.URL.createObjectURL(response);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'downloadFilteredResumes.zip'; // or dynamic name
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      } else {
+          alert('Unexpected response. Download failed.');
+      }
+
+      //const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.download = `filtered_resumes_${new Date().toISOString().split('T')[0]}.zip`;
@@ -177,9 +189,23 @@ const CandidateResults: React.FC = () => {
     try {
       const response = await resumeAPI.downloadAllResumes(currentJobId);
 
+      //const blob = new Blob([response], { type: 'application/zip' });
       // Create download link for zip file
-      const blob = new Blob([response], { type: 'application/zip' });
-      const url = window.URL.createObjectURL(blob);
+      const blob = new Blob([response], { type: 'downloadAllResumes/zip' });
+      if (response instanceof Blob) {
+        const url = window.URL.createObjectURL(response);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = 'downloadAllResumes.zip'; // or dynamic name
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        window.URL.revokeObjectURL(url);
+      } else {
+          alert('Unexpected response. Download failed.');
+      }
+
+      //const url = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = url;
       link.download = `all_resumes_${new Date().toISOString().split('T')[0]}.zip`;

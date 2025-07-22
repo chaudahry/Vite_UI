@@ -29,7 +29,7 @@ export const apiCall = async (endpoint: string, options: RequestInit = {}) => {
     
     if (contentType && contentType.includes('application/json')) {
       data = await response.json();
-    } else if (contentType && contentType.includes('application/octet-stream')) {
+    } else if (contentType && (contentType.includes('application/pdf') || contentType.includes('application/zip') ||contentType.includes('application/octet-stream'))) {
       data = await response.blob();
     } else {
       data = await response.text();
@@ -218,7 +218,7 @@ export const resumeAPI = {
   // Download all filtered resumes
   downloadFilteredResumes: (data: {
     job_id: string;
-    resume_ids: string[];
+    filtered_resume_ids: string[];
     filters?: any;
   }) =>
     apiCall('/download_all_filtered_resumes', {

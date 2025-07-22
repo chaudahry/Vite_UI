@@ -12,6 +12,7 @@ import random
 from email.message import EmailMessage
 from dotenv import load_dotenv # Import load_dotenv
 from supabase import create_client, Client # Import Supabase client
+from mimetypes import guess_type
 
 # Load environment variables from .env file
 load_dotenv()
@@ -570,8 +571,8 @@ def download_resume_file():
     # Security check: Ensure the file is within the UPLOAD_FOLDER
     if os.path.exists(full_filepath) and os.path.abspath(os.path.dirname(full_filepath)) == os.path.abspath(
             app.config['UPLOAD_FOLDER']):
-        return send_from_directory(app.config['UPLOAD_FOLDER'], unique_filename_on_server, as_attachment=True,
-                                   download_name=original_filename)
+        mimetype, _ = guess_type(original_filename)
+        return send_from_directory(app.config['UPLOAD_FOLDER'], unique_filename_on_server, as_attachment=True,download_name=original_filename, mimetype=mimetype or 'application/octet-stream')
     else:
         return jsonify({"message": "File not found on server or invalid path"}), 404
 

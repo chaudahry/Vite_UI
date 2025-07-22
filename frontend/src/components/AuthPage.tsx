@@ -28,7 +28,7 @@ const AuthPage: React.FC = () => {
   const [otp, setOtp] = useState('');
   const [pendingUser, setPendingUser] = useState<any>(null);
   const [resetEmail, setResetEmail] = useState('');
-  const [otpType, setOtpType] = useState<'signup' | 'reset'>('signup');
+  const [otpType, setOtpType] = useState<'signup' | 'reset_password'>('signup');
 
   const passwordRequirements = [
     { text: 'At least 8 characters', check: (pwd: string) => pwd.length >= 8 },
@@ -196,7 +196,7 @@ const AuthPage: React.FC = () => {
         setOtpSent(false);
         setPendingUser(null);
         setOtp('');
-      } else if (otpType === 'reset') {
+      } else if (otpType === 'reset_password') {
         setOtpSent(false);
         setShowPasswordReset(true);
         setOtp('');
@@ -221,8 +221,9 @@ const AuthPage: React.FC = () => {
       await authAPI.forgotPassword(formData.forgotEmail);
       
       setResetEmail(formData.forgotEmail);
+      setOtpAction('reset_password');
       setOtpSent(true);
-      setOtpType('reset');
+      setOtpType('reset_password');
       setShowForgotPassword(false);
       setErrors({});
     } catch (error: any) {
