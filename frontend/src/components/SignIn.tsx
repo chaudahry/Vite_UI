@@ -4,20 +4,20 @@ import { useApp } from '../context/AppContext';
 import { API_BASE_URL } from '../utils/api';
 
 const SignIn: React.FC = () => {
-  const { 
-    goToPage, 
-    setCurrentUser, 
-    saveUserSession, 
-    setOtpAction, 
-    setLoading, 
-    setLoadingMessage 
+  const {
+    goToPage,
+    setCurrentUser,
+    saveUserSession,
+    setOtpAction,
+    setLoading,
+    setLoadingMessage
   } = useApp();
-  
+
   const [formData, setFormData] = useState({
     email: '',
     password: ''
   });
-  
+
   const [errors, setErrors] = useState({
     email: '',
     password: ''
@@ -26,7 +26,7 @@ const SignIn: React.FC = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Clear error when user starts typing
     if (errors[name as keyof typeof errors]) {
       setErrors(prev => ({ ...prev, [name]: '' }));
@@ -35,7 +35,7 @@ const SignIn: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Clear previous errors
     setErrors({ email: '', password: '' });
 
@@ -43,7 +43,7 @@ const SignIn: React.FC = () => {
       setErrors(prev => ({ ...prev, email: 'Please enter your email address' }));
       return;
     }
-    
+
     if (!formData.password) {
       setErrors(prev => ({ ...prev, password: 'Please enter your password' }));
       return;
@@ -58,7 +58,7 @@ const SignIn: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
+
       const data = await response.json();
 
       if (response.ok) {
@@ -71,11 +71,11 @@ const SignIn: React.FC = () => {
           department: data.department,
           position: data.position
         };
-        
+
         setCurrentUser(user);
         saveUserSession();
         alert(data.message);
-        
+
         if (data.role_set) {
           goToPage('jobDescription');
         } else {
@@ -107,7 +107,7 @@ const SignIn: React.FC = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: formData.email })
       });
-      
+
       const data = await response.json();
 
       if (response.ok) {

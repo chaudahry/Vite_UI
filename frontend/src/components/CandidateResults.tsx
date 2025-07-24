@@ -147,30 +147,21 @@ const CandidateResults: React.FC = () => {
         filtered_resume_ids: resumeIds,
         filters: filters
       });
-      //const blob = new Blob([response], { type: 'application/zip' });
       // Create download link for zip file
       if (response instanceof Blob) {
         const url = window.URL.createObjectURL(response);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'downloadFilteredResumes.zip'; // or dynamic name
+        link.download = `filtered_resumes_${new Date().toISOString().split('T')[0]}.zip`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
       } else {
-          alert('Unexpected response. Download failed.');
+          alert('Unexpected response. Download failed. Please try again.');
       }
-
-      //const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `filtered_resumes_${new Date().toISOString().split('T')[0]}.zip`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
     } catch (error: any) {
+      console.error("Error in downloadAllFiltered:", error);
       alert(error.message || 'Failed to download filtered resumes.');
     } finally {
       setLoading(false);
@@ -189,31 +180,23 @@ const CandidateResults: React.FC = () => {
     try {
       const response = await resumeAPI.downloadAllResumes(currentJobId);
 
-      //const blob = new Blob([response], { type: 'application/zip' });
       // Create download link for zip file
-      const blob = new Blob([response], { type: 'downloadAllResumes/zip' });
+      const blob = new Blob([response], { type: 'application/zip' });
       if (response instanceof Blob) {
         const url = window.URL.createObjectURL(response);
         const link = document.createElement('a');
         link.href = url;
-        link.download = 'downloadAllResumes.zip'; // or dynamic name
+        link.download = `all_resumes_${new Date().toISOString().split('T')[0]}.zip`; // or dynamic name
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
         window.URL.revokeObjectURL(url);
       } else {
-          alert('Unexpected response. Download failed.');
+          alert('Unexpected response. Download failed. Please try again.');
       }
 
-      //const url = window.URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = `all_resumes_${new Date().toISOString().split('T')[0]}.zip`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
     } catch (error: any) {
+      console.error("Error in downloadAllResumes:", error);
       alert(error.message || 'Failed to download all resumes.');
     } finally {
       setLoading(false);
@@ -319,12 +302,21 @@ const CandidateResults: React.FC = () => {
                   className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:outline-none focus:ring-4 focus:ring-blue-500/20 transition-all duration-200"
                 >
                   <option value="">All Categories</option>
-                  <option value="Engineering">Engineering</option>
+                  <option value="Tech">Tech</option>
                   <option value="Design">Design</option>
                   <option value="Marketing">Marketing</option>
                   <option value="Sales">Sales</option>
-                  <option value="Product">Product</option>
-                  <option value="Data Science">Data Science</option>
+                  <option value="Finance">Finance</option>
+                  <option value="HR">HR</option>
+                  <option value="Social Media">Social Media</option>
+                  <option value="Engineering">Engineering</option>
+                  <option value="Operations">Operations</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Education">Education</option>
+                  <option value="Customer Service">Customer Service</option>
+                  <option value="Legal">Legal</option>
+                  <option value="Project Management">Project Management</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
               <div>

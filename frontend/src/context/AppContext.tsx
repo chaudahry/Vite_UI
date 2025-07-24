@@ -44,39 +44,39 @@ interface AppContextType {
   isAuthenticated: boolean;
   setIsAuthenticated: (auth: boolean) => void;
   logout: () => void;
-  
+
   // Navigation
   currentPage: string;
   setCurrentPage: (page: string) => void;
-  
+
   // Application State
   currentStep: number;
   setCurrentStep: (step: number) => void;
-  
+
   // Job Requirements
   jobRequirement: JobRequirement | null;
   setJobRequirement: (job: JobRequirement) => void;
   currentJobId: string | null;
   setCurrentJobId: (id: string | null) => void;
-  
+
   // File Management
   uploadedFiles: File[];
   setUploadedFiles: (files: File[]) => void;
   uploadedResumeIds: string[];
   setUploadedResumeIds: (ids: string[]) => void;
-  
+
   // Candidates
   candidates: Candidate[];
   setCandidates: (candidates: Candidate[]) => void;
   filteredCandidates: Candidate[];
   setFilteredCandidates: (candidates: Candidate[]) => void;
-  
+
   // UI State
   loading: boolean;
   setLoading: (loading: boolean) => void;
   loadingMessage: string;
   setLoadingMessage: (message: string) => void;
-  
+
   // Modals
   showModal: string | null;
   setShowModal: (modal: string | null) => void;
@@ -110,10 +110,10 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   // Authentication State
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  
+
   // Navigation State
   const [currentPage, setCurrentPage] = useState('landing');
-  
+
   // Application State
   const [currentStep, setCurrentStep] = useState(0);
   const [jobRequirement, setJobRequirement] = useState<JobRequirement | null>(null);
@@ -122,7 +122,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const [uploadedResumeIds, setUploadedResumeIds] = useState<string[]>([]);
   const [candidates, setCandidates] = useState<Candidate[]>([]);
   const [filteredCandidates, setFilteredCandidates] = useState<Candidate[]>([]);
-  
+
   // UI State
   const [loading, setLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState('Processing...');
@@ -134,12 +134,12 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   useEffect(() => {
     const savedUser = localStorage.getItem('epochfolio_user');
     const savedToken = localStorage.getItem('epochfolio_token');
-    
+
     if (savedUser && savedToken) {
       try {
         const userData = JSON.parse(savedUser);
         setUser(userData);
-        
+
         // Check if user has completed profile
         if (userData.role && userData.department && userData.position) {
           setIsAuthenticated(true);
@@ -195,7 +195,7 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   const saveSession = (userData: User, token?: string) => {
     setUser(userData);
     localStorage.setItem('epochfolio_user', JSON.stringify(userData));
-    
+
     if (token) {
       localStorage.setItem('epochfolio_token', token);
     }
@@ -233,39 +233,39 @@ export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
     isAuthenticated,
     setIsAuthenticated,
     logout,
-    
+
     // Navigation
     currentPage,
     setCurrentPage,
-    
+
     // Application State
     currentStep,
     setCurrentStep,
-    
+
     // Job Requirements
     jobRequirement,
     setJobRequirement,
     currentJobId,
     setCurrentJobId,
-    
+
     // File Management
     uploadedFiles,
     setUploadedFiles,
     uploadedResumeIds,
     setUploadedResumeIds,
-    
+
     // Candidates
     candidates,
     setCandidates,
     filteredCandidates,
     setFilteredCandidates,
-    
+
     // UI State
     loading,
     setLoading,
     loadingMessage,
     setLoadingMessage,
-    
+
     // Modals
     showModal,
     setShowModal,

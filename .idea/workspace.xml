@@ -5,248 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76ca4300-3f65-459d-9881-81b56dba5443" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/00068f6d-5c00-456b-abec-b196e2d9da65_Gunjan Parakh - Gunjan Parakh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/00541a69-795f-4a96-9a28-2ec1688b3d29_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/0116ea88-a77e-4a9b-9821-9ed91d0d91a4_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/0297bdf7-25fe-4a03-b46e-e09750f2e033_resume5.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/02d26b88-c158-4201-b4b8-00ede71fcf4e_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/0597bb2d-1d54-4761-8b42-1a7647feb560_GauravSingh_Resume_2025 - Gaurav Singh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/05d04800-2624-433d-ae29-60394a0c8cc6_GogineniDeekshitresume31 (1)[1] - goginenideekshit3105.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/07f356bb-5dd9-41b5-bb83-3f5c5f3521ca_GauravSingh_Resume_2025 - Gaurav Singh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/0c75c197-e7dc-42db-b98a-f2171658dd74_BHAVYA AGGARWAL (3) - Bhavya Aggarwal.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/0cadf824-2324-4f54-abb8-53206ed8c58b_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/0cd1964c-53fe-484f-86a8-5c89319fba19_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/0cda054b-c173-4e1e-9e40-c00743f4d453_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/0d35fa62-c25a-456d-a79f-0d624093918e_GauravRasane - Gaurav Rasane.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/0d54913c-fd84-4832-84f4-c6a3cda0a9fb_Hardik Resume - Hardik Arora.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/0d931504-afda-45a1-b32c-f10ad4aae8b1_Akansha_DataAnalytics - Akansha Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/101c0166-6e2c-457a-b7a6-ac66f4edd2b6_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/107f4cdf-39ba-452f-abd4-c52a52bcbf42_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/10e01738-3e98-4c2d-8c14-09ba823284f5_Gayatri_resume - Gayatri Jagadale.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/112da31f-c54b-4332-ac9d-f2bd4f935cf2_Digvijay_Ahire_Resume - DIGVIJAY AHIRE.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/120fef69-9db9-4b14-8161-b88f14d657d9_GauravRasane - Gaurav Rasane.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/141fcc0b-adcc-4ff3-bb7f-481c3608b390_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/143aa7e6-e6b3-4673-a5e4-0e861053444d_Gayatri_resume - Gayatri Jagadale.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/15a3c389-0c46-4880-8fc0-5f3f769acfc4_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/168c2846-5faf-495d-8ca1-3d1f65aa472d_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/182797ba-e8cb-459f-b010-4d539cc9f4df_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/18855a15-fcfb-4f7d-8b98-931cc1906ff1_Aryan.resume1_1 - CHAUDHARY ARYAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/19cef152-ceaf-48e6-a3ef-7072a9cb8a8c_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/1a165adc-7aa9-4e78-8906-a46f1bc7291c_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/1b523aea-4254-4cde-b869-7917ac18ece9_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/1bc5333d-3c61-42d3-8172-e0681fd98cd1_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/1d7d334d-dd64-4839-9b85-469a7571dc92_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/1e49d2f3-6a7c-4c90-a65b-910485785ba8_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/21280072-5222-4c4b-b0af-67566cc7ff71_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/219d0cb1-ccbb-4fe7-ab70-6ab58debd34c_CV_202409241450054 - Manohar Jadhav.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/21ce9b63-2a65-4c87-9bf5-1629792365ae_Gunjan Parakh - Gunjan Parakh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/220fd9d3-3ea1-4562-8d1e-4ff34b861cfa_CV - AVANI VERMA.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/23317051-b014-4393-9944-3c1a0ddceed1_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/26a4236c-0200-49df-a8d4-94cd4451a0b3_Gunjan Parakh - Gunjan Parakh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/27efdadd-364c-4ed0-bcb5-ff1dd428d6e8_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/29158b4c-f77e-4a77-b72f-bdf2a65c3482_GauravSingh_Resume_2025 - Gaurav Singh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/292a39c8-4853-4a03-a6ac-2d8bbcd05761_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/2a407ba6-18f7-4af9-8fd3-8accb7293fcb_GauravSingh_Resume_2025 - Gaurav Singh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/2ad86333-83b5-45bf-8785-662dde9216ef_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/2b7461fb-9141-4da3-92f1-2c43893f3133_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/2b8cee34-8aea-489e-955d-8667427bc64d_resume9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/2cbb97e5-c559-4231-b3c7-f30000fc5a7c_Hardik Resume - Hardik Arora.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/2d66f665-8a08-40ad-948d-4eb698050b29_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/2e9e4d71-5180-41d9-919f-7136c22ae725_GauravRasane - Gaurav Rasane.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/304f5765-2fb3-4d65-a938-656a218d3fe4_resume1.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/31998d7e-059d-4400-bbaf-5adcdcd0be6c_Gunjan Parakh - Gunjan Parakh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/31d7c0af-1f7d-4f2e-8f28-d4b6df5da4c0_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/33d39b80-608b-4037-b68e-bc253e3cc2ed_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/346de034-dda4-4bc8-b0da-a6ca39fab0d3_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/35a11f10-6f57-4a6a-a487-7775e83127c9_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/35b84382-e0fd-4e6b-92c8-b8cce94ddc45_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/36f43744-65b9-4c71-b6fa-93dc7cf342d2_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/376d2129-f185-488d-917d-0332eeccc655_Harsh kalekar Resume  - Harsh Kalekar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/3a909dcb-9aae-4209-8f37-a3efcbc62c6d_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/3d303aae-72ed-47f0-be73-20f90da9907e_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/3d4d2975-5968-43b1-8560-1acc4809f105_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/3d952b5c-7e7a-4d04-be63-48ff5a0e9fe3_4 th sem final resume - Dev Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/40be4ceb-9302-4165-9924-560964cced29_Meta.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/419da7e7-7e49-4829-8131-55741f433d6b_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/421f242b-18b1-4d11-a4f7-d717d77d13f4_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/42228e74-1a14-457f-b953-953357aa704d_CV - Vaishnavi Lawate.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/422d8327-faeb-4f37-85a6-8c9225780716_resume4.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/42d30fe4-664c-4075-93cb-bc76ff5b1029_Gayatri_resume - Gayatri Jagadale.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/44499763-d570-4e9d-92cb-b6cd5dde769a_Data_Science - Vimal Kumar 65.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/44a6fd68-3a8c-46a2-80f7-7341afe28d57_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/45098aae-928d-49a8-a38e-3fda93a3faf6_GauravRasane - Gaurav Rasane.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/45bcdf14-68c1-40de-b257-e9d54d6289cf_22A31A4484_Resume (1) - Bhanu Durgesh Dammala.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/460ee5f9-c7d2-422c-a7b4-8ebc3054827c_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/472e5ab9-2df0-4b50-8cd9-e793ae90ef9d_Gurumoorthy_DS_Resume - Guru Moorthi.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/4837db34-4606-4943-bc8b-5463affc5b33_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/487dee00-0340-4890-9a5e-ef2465188bec_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/48976042-9d90-4dc5-b50d-af9b148fe55e_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/491c504e-a7a1-4a57-9593-92667b686e10_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/492bc806-ca4e-4663-879a-967dd05a4756_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/4b4afffc-ad8c-4b94-af0a-8518f095325c_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/4c0f191e-2dd0-4743-956c-dd8792ba705b_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/4cf2d752-97f2-4460-b6db-264b1c6a74e7_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/4e0b801e-214b-4a9f-bd71-a746e7e63cb9_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/4f92dc7c-9b29-4fea-872c-143a15f93bf3_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/514123ad-4821-41d1-8ab9-d00824964248_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/523a31f4-9c28-4691-9baf-fa8f99091148_Akshita_CV.pdf - Akshita Akshita.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/529ccd9c-28da-497c-9ad0-6ce95d9f7e49_GogineniDeekshitresume31 (1)[1] - goginenideekshit3105.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/53f9c6eb-cd55-4281-8c60-fa95a1f5731c_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/548b8cea-32c1-410d-b3ed-a8fe96bbac6e_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/557af322-4d77-42ac-8f57-100be19a712f_CV_2025032712473513GOURI - Gouri Mourya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/559cf25c-73f8-4af2-85f1-596e688a17ce_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/5714d216-435f-4c87-82c7-6a6eeb8b5bad_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/58a63a1f-b7d6-4fff-844d-be93b6f30f66_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/590a3783-7747-4e00-9035-05a00c9b41b2_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/5b27bdd8-53be-41f2-9922-092b0e50b964_Gunjan Parakh - Gunjan Parakh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/5c5f2542-d6fd-475a-83e1-7329786e755f_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/5cd1abda-75e6-4f51-9f56-ae3a4b537974_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/5d0bd4e6-fac5-4116-87ca-99046be9a228_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/5ec8a962-e6dc-451c-a80f-e23f5ae1c9a1_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/5ef78e8f-1af2-40c2-8f7f-1173d273fdd3_GauravRasane - Gaurav Rasane.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/6064f4a3-c95f-4cd0-943d-d1539a69da30_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/61f3bf9c-80c8-41a0-8676-c774597353fe_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/64c43311-c723-43a8-a1c0-d4c1610a971d_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/67bd9c64-bf35-458e-8329-1c27b2129178_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/68f7ad3e-e577-4a48-b49e-fd4c4536881e_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/69a4dabf-5358-4195-9344-83b4b11a7796_DhawalBhawsar_2026_CSE(DS)_60009220118 (1) - Dhawal Bhawsar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/6d48641e-ac3f-4903-97bc-f6ce6fac8c53_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/6e13f030-8c2f-472e-83ad-be5406d84d94_CV_2025032712473513GOURI - Gouri Mourya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/702b6901-7a3a-4350-8dec-ff1373ed4acb_AYUSH GUPTA RESUME DA - Ayush Gupta.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/70f87387-db8b-4fe0-ba67-b59aea99e3ff_Ankit Ray Data Analyst new resume-2 - Glaxy Motive.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/71cd407b-e77d-40e4-9881-205d012628eb_resume2.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/72ff8205-6989-4b99-8ef0-c6fb195219ca_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/73811a86-c741-4003-a552-7948e25ea22d_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/743f82d4-7fcc-4bde-8354-852dd8cf0585_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/74aa837f-7863-455b-8321-98f7e4b9a3ac_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/74b026e2-f219-4a81-8275-d502741f3a89_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/74e48afa-9fa5-4586-8b12-bed3ab934f51_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/7c117c07-0734-4b70-b8be-267c653f749b_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/7cd9615b-d419-4887-9263-292dbd63f851_Anjali kumari - Anjali Kumari.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/7d4532cb-e51a-4654-94b4-accdaba5c51b_Akshatha C (Resume) - Akshatha.C.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/7d6f5a16-ec87-4f0a-9b27-a5db7cb225cb_Amisha_s Resume MCC - Amisha Y.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/7dc148db-9151-48da-982a-7ddd53db470e_ADARSH_J_ai_engineer - adarsh Jangeeti.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/7ed1b64c-3326-4ddc-b0fa-83a7ae8060a5_Aman Rautela_Resume (4) - Aman Rautela.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/7f1c2e72-9aab-4fb5-a2f7-ab83f1c53e7a_GauravRasane - Gaurav Rasane.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/7f9e80c0-ebd7-41c3-a5f4-3a6f506e071f_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/7fb128a3-ea99-476a-9a41-c18d59fbc842_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/80d902f4-f836-4876-8529-d61d837f7c79_GogineniDeekshitresume31 (1)[1] - goginenideekshit3105.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/81948b43-86f7-4fbe-a012-f508a98c546c_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8243e5a1-df13-4266-ae4e-e2f81d8c9890_AnandShaw Resume-5 - Anand Shaw.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/832b3010-10ea-46ba-b837-c3292ad0d132_Abhishek_Dadhel_DataScientist_Resume_2025 - Abhishek Dadhel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/84099c46-6aec-475d-88f0-d34a60398632_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/87bcfab9-86fe-4ded-b7a6-be7f897ca176_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8bb62989-0d5e-4858-9231-b83bdc360e9b_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8bf4b3d4-1137-46f9-b066-fff218793821_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8c2cad3d-d713-4e25-8351-0ff40aad5c97_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8c7eef3b-aa4a-44e5-ab03-02f47f234fe5_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8cc3b771-0cd3-4806-bda9-fba36ad40923_GauravSingh_Resume_2025 - Gaurav Singh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8d74eea0-b210-4aa7-af54-2dd10b42bb97_CV_202409241450054 - Manohar Jadhav.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8dccc5dd-69b7-4e27-8ffb-51779a728447_resume3.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8e8d0c60-d0ed-4b38-8ba2-0cdfdb6fc7b1_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8f3d9976-27d6-4011-99fe-254276894df7_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8f662661-4a75-4787-9af2-cccbc459e512_Arya Save - Resume - Arya Save.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/8fd7ee05-da78-4077-965e-902172170044_resume6.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/90129079-bd33-4d8e-991e-75f7315d83a5_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/90a8848e-f68b-4fbd-a962-e6ca8715fe81_Back to focus (1) - Dharmender.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/925bf981-6e17-4f76-a4e0-3179a05cb7a6_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/93d6a554-f2a8-4c67-8a5d-cc8947cafa02_app.resumebuilder - Saurav Paliwal.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/9aa0e42d-4824-4625-afd5-5256239b352c_Harshil-Resume - Harshil.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/9b57a34a-c96f-4783-af59-4edc9534f48a_GauravRasane - Gaurav Rasane.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/9d2a01c0-0eaa-4ccd-b8ee-a11369b05fe4_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/9da14aad-c2c8-476e-b5ad-bcb75083df34_Hardik Resume - Hardik Arora.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/9e211eea-9793-4f9b-9abe-ef9e57d28f2e_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/9ee05d87-ad4b-4887-b243-7fb646997a13_Gunjan Parakh - Gunjan Parakh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/a0c2622e-2011-47df-b88b-55bea3a42ab2_Akash kumar _Resume - Akash Kumar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/a15bfd81-4fd9-4202-9fd8-9c38e9a7a51b_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/a1c707d8-f30a-4f55-b32b-bb85be6bd3bb_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/a20b9771-4496-44ec-9167-86c8f47c21ed_CV.PDF_20250218_221620_0000 - Nandini Ranjan.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/a62451b6-bd9f-4171-8347-260f4eb3be34_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/a8fd0079-cb58-4b16-9cc4-bbfa8c4a699a_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/a90a4d5b-c09b-4479-964f-2e02e3ca99c3_Doc1 (3) (1) - Khushi Sharma.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/a91d9b59-906b-40bb-ae6b-432e05ee0499_resume8.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/aa220b1f-2530-4601-86f6-5dddcd7653f1_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/aa225c04-f427-41d0-ab20-8b0bb6db46fe_Gurumoorthy_DS_Resume - Guru Moorthi.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/ac3c4868-e1f0-4352-9dfc-114e67094dac_resume7.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/ac5a7c68-ff09-4a32-bf45-e8b6460b1665_Gayatri_resume - Gayatri Jagadale.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/ad0c9e34-b061-4367-a162-854411a58644_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/af5d6f2f-a4e0-48dc-a57f-d3e5da6e2252_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/af795aa2-a32b-48ac-8ffe-cc00c30bb7fa_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/b03736b1-8422-4eb9-a805-13b3486ad4b1_GauravRasane - Gaurav Rasane.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/b0a9ee34-3d70-48ef-8f4c-d95be1ae37c7_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/b0e62be4-9138-41de-ae7e-f0776245602b_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/b350d80f-6063-4fbe-b988-e9d306c17658_Gurumoorthy_DS_Resume - Guru Moorthi.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/b5dd3994-3277-449d-8a1d-7e090aa465f0_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/b607642b-7bd8-44e0-8398-a5b90d876f67_resume8.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/b64384a5-a83a-4244-b2eb-d504588812e9_Data Science Resume (1) - Masampelly Sathvik.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/b81d0c97-c9f7-45a4-879c-a38885d1efc4_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/bac59919-75f0-4e07-b239-22937a7d9ce3_Meta.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/bc47269b-aa54-4a8d-b5d3-c41c8deafe62_Cv-Saqlain_Malik_IT-Engi (1) - Malik Sahab.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/bdf9c53e-86bc-445e-8f3a-828ad7ca8b0d_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/bf6ee8da-8d59-475c-aadd-a62b2891e01a_AbhinayReddyResume (5) - Evil Bot.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/bf8bdb56-c2f1-45bd-b3fa-0f04a7204c1c_Data Science Resume (1) - Masampelly Sathvik.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/bfc74e3a-81c7-4769-88c4-f68b3c0e1c3e_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/c1dcff24-6aa5-4754-83c1-ca0d48a975bf_CV - Kaushik Pradhan.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/c314f9c1-0991-4014-bbb7-37cc871f498b_GogineniDeekshitresume31 (1)[1] - goginenideekshit3105.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/c3ea5188-026a-450b-93d3-6793cbecd878_Cv-Saqlain_Malik_IT-Engi (1) - Malik Sahab.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/c701438b-3868-4066-a8ac-35b2b8390fac_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/c7ccf03c-2b49-4408-9428-81eb92a1b93b_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/c7eb92b8-9b56-4d9a-8b77-1b0e54effc8b_Anish_Resume - Anish RAO.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/c81bd9c0-cfbc-45d3-9e3d-d26a493b069a_GogineniDeekshitresume31 (1)[1] - goginenideekshit3105.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/cae5ad3a-8446-407e-af00-0542e3a5684f_Hardik Resume - Hardik Arora.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/cb1ac1ec-1719-488c-83bc-353521f18f71_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/cc6565f8-0f4f-49ca-a28e-9c4e09e9d693_GauravRasane - Gaurav Rasane.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/d4df3086-2b57-4cc9-bd21-79d097bc663a_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/d4fe094c-72f9-4f1d-aa84-8f8f6cf97e17_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/d5088dc7-4010-4abc-80a8-ae16f2081f11_GogineniDeekshitresume31 (1)[1] - goginenideekshit3105.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/d58c852c-98c6-4cdb-9eb6-fe65490af372_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/d5d67714-4877-476d-adee-09c00ab5f308_Dev resume1 - Devvrat Tiwari.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/d62444a9-7871-4ee2-a705-b36c1e4ca297_cv - Nisha Gupta.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/d6a993d4-577c-48c6-9a27-0646f2d2e308_Aryan_Nair_CV (1) - Aryan Nair.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/d9cd809f-5304-4c76-a6a3-9df625c62c20_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/d9e05139-3c02-4a13-af0c-f31f112ffde0_Gaurav Sonar Resume - CO-52-Gaurav Sonar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/da8e8ce2-c0ae-4c0a-ab68-6bf2cb559c11_Gayatri_resume - Gayatri Jagadale.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/db4c5783-77d2-4e60-b3e4-06e34bff93e6_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/dc0f1886-5815-4306-bb6d-cdb9654de4a5_Digvijay_Ahire_Resume - DIGVIJAY AHIRE.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/dc65f049-e2c9-4ad7-a119-a967bb4cdd5a_DhawalBhawsar_2026_CSE(DS)_60009220118 (1) - Dhawal Bhawsar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/de4ed267-b00b-4c0f-b512-3a76b367737e_CV - Sanjana Mehta.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/de5afcdb-9ab2-49e5-a89b-f517c4268303_Data_Science - Vimal Kumar 65.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/de8da9be-ca94-4700-b125-058c0fa6fae9_resume7.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/df145dd0-f0f7-492d-a6a6-c32595de49b4_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/df1f70e1-8127-4113-a63f-978223d1e3db_GauravSingh_Resume_2025 - Gaurav Singh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/e1d2c90d-2faa-45b6-ab5c-dcc17465c076_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/e2182932-e614-4dd0-a658-8b08de073215_Charu Rajput-Intern4 - Charu Rajput.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/e4a1e331-5903-4899-a769-bd5411331c76_Gurumoorthy_DS_Resume - Guru Moorthi.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/e5ad4bd9-8041-4332-bfba-8ebd8b77eeb4_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/e6a5a228-d716-496e-9d1b-5e193f130091_Final CV-2 - Poojan Mardiya.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/e970e640-e834-484d-b88f-2dbc61517a4a_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/ea63cf94-a38a-479b-9bad-830748249592_GauravSingh_Resume_2025 - Gaurav Singh.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/eaa47c24-161f-49fd-86f5-fa08194664a6_Gayatri_resume - Gayatri Jagadale.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/ed02cfa5-c20a-41d4-9ff2-5f0a4b40e916_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/ee25f186-a596-4231-902e-191379934f66_(Shivam Exp) - SHIVAM.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/eeda1be7-307b-4df4-9ac1-ca73e38539fb_Ashish Kumar - Ashish Kumar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/ef366a92-2b23-4084-8ddf-6d67aa043769_Ayush Jha_CV_Intern(1) - Jhaji OP.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/ef4f6d42-54d8-4fb5-abd4-cfb876e4ebec_21B91A5716 - Anusha E.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/eff37a60-ecf9-4bfe-bcf0-e9c30b924c5c_Hardik Resume - Hardik Arora.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/f0e8f4a4-b27d-490b-b44b-35ec8a1e154e_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/f15c1630-e52b-4f3a-aaa0-b2b0fd3a75e5_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/f54a39a9-3c76-41ac-936e-1cc39fc49565_Document from juned - JUNED KHAN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/f69cd0fe-18ec-4d02-b404-3941637181ee_Harsh kalekar Resume  - Harsh Kalekar.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/f718c53c-fb34-4e16-b5fd-cf5c780c7695_Dev resume1 - Devvrat Tiwari.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/f74cd2c3-8077-4e3d-8efb-7c649604df85_Data Analysis resume - subhash patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/f799247c-0dd4-472f-b097-73fe3e4ae5a2_Gurumoorthy_DS_Resume - Guru Moorthi.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/fa1e0680-8091-4b19-91e2-76e6bbd6d5c0_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/fa56d023-7338-4c1b-8207-3a30cc1a2c09_Ekshit Kushwaha Resume-1 - Ekshit Kushwaha.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/fb2bddef-81b6-490c-bfde-a4101eb14eb9_Gaji resume cv by Majid-3 - MD GAJI HUSAIN.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/fb31b0a7-af81-4061-972e-4746adf20d9b_Document from Heli Patel - Heli Patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/fd3cba25-77a6-410c-b3a3-ef7c44471319_Divy.resume - Divytosh Upadhyay.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/fdd8e97b-6e08-4855-8773-c2e7e9c5c0c2_Data Analysis resume - subhash patel.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/uploads/ff6ddb31-80f9-4f0e-8df5-fd2b4280018a_resume9.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/components/AuthPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AuthPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/text_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/text_processor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/CandidateResults.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CandidateResults.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/utils/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/utils/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SignIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/context/AppContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/AppContext.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +19,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -268,11 +33,12 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\c data\PycharmProjects\AI Resume Screener\backend\frontend" />
       <recent name="E:\c data\PycharmProjects\AI Resume Screener\frontend" />
     </key>
   </component>
