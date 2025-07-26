@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76ca4300-3f65-459d-9881-81b56dba5443" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/text_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/text_processor.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AppRouter.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/AuthPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AuthPage.tsx" afterDir="false" />
@@ -21,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/frontend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
