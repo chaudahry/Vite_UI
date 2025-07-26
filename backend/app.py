@@ -16,10 +16,6 @@ from mimetypes import guess_type
 
 # Load environment variables from .env file
 load_dotenv()
-print("Loaded ENV:")
-print("SUPABASE_URL:", os.environ.get("SUPABASE_URL"))
-print("SMTP_USER:", os.environ.get("SMTP_USER"))
-
 
 # Import your NLP processing modules (assuming these exist)
 # Ensure these modules are available in your Render environment

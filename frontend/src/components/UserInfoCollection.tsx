@@ -5,14 +5,15 @@ import { userAPI } from '../utils/api';
 
 const UserInfoCollection: React.FC = () => {
   const { setCurrentPage, user, setUser, setIsAuthenticated, setLoading, setLoadingMessage } = useApp();
-  
+
   const [formData, setFormData] = useState({
-    full_name: user?.name || '',
+    // Ensure consistent naming: use 'name' to match the User interface
+    name: user?.name || '',
     department: user?.department || '',
     position: user?.position || '',
     hrId: user?.hrId || ''
   });
-  
+
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const departments = [
@@ -39,8 +40,9 @@ const UserInfoCollection: React.FC = () => {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
 
-    if (!formData.fullName.trim()) {
-      newErrors.fullName = 'Full name is required';
+    // Use 'name' to match formData state
+    if (!formData.name.trim()) {
+      newErrors.name = 'Full name is required';
     }
     if (!formData.department) {
       newErrors.department = 'Department is required';
@@ -58,11 +60,11 @@ const UserInfoCollection: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validateForm()) return;
 
     if (!user?.email) {
-      setErrors({ fullName: 'User session expired. Please login again.' });
+      setErrors({ name: 'User session expired. Please login again.' }); // Use 'name' here too
       return;
     }
 
@@ -72,7 +74,8 @@ const UserInfoCollection: React.FC = () => {
     try {
       const response = await userAPI.updateProfile({
         email: user.email,
-        full_name: formData.fullName,
+        // Pass 'name' to the API if that's what it expects, or adjust API to 'full_name'
+        full_name: formData.name, // Assuming API expects full_name, mapping from formData.name
         hr_id: formData.hrId,
         position: formData.position,
         department: formData.department
@@ -81,7 +84,7 @@ const UserInfoCollection: React.FC = () => {
       // Update user with collected information
       const updatedUser = {
         ...user,
-        full_name: formData.fullName,
+        name: formData.name, // This should be 'name' to match User interface
         department: formData.department,
         position: formData.position,
         hrId: formData.hrId,
@@ -91,11 +94,11 @@ const UserInfoCollection: React.FC = () => {
       setUser(updatedUser);
       localStorage.setItem('epochfolio_user', JSON.stringify(updatedUser));
       setIsAuthenticated(true);
-      
-      // Move to dashboard
+
+      // Explicitly set the current page to 'dashboard'
       setCurrentPage('dashboard');
     } catch (error: any) {
-      setErrors({ fullName: error.message || 'Failed to update profile. Please try again.' });
+      setErrors({ name: error.message || 'Failed to update profile. Please try again.' }); // Use 'name' here too
     } finally {
       setLoading(false);
     }
@@ -108,7 +111,7 @@ const UserInfoCollection: React.FC = () => {
       <div className="pt-24 min-h-screen flex items-center justify-center p-4">
         <div className="w-full max-w-2xl mx-auto">
           <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-6 md:p-10 shadow-2xl border border-gray-100/50">
-            
+
             {/* Header */}
             <div className="text-center mb-8 md:mb-12">
               <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
@@ -137,7 +140,7 @@ const UserInfoCollection: React.FC = () => {
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
-              
+
               {/* Full Name */}
               <div className="group">
                 <label className="block text-sm font-semibold text-gray-700 mb-3">
@@ -146,20 +149,20 @@ const UserInfoCollection: React.FC = () => {
                 </label>
                 <input
                   type="text"
-                  name="fullName"
-                  value={formData.fullName}
+                  name="name" // Changed name from fullName to name
+                  value={formData.name}
                   onChange={handleInputChange}
                   className={`w-full px-4 py-4 border-2 rounded-xl transition-all duration-200 ${
-                    errors.fullName 
-                      ? 'border-red-300 focus:border-red-500' 
+                    errors.name // Changed errors.fullName to errors.name
+                      ? 'border-red-300 focus:border-red-500'
                       : 'border-gray-200 focus:border-blue-500 group-hover:border-gray-300'
                   } focus:outline-none focus:ring-4 focus:ring-blue-500/20 text-lg`}
                   placeholder="Enter your full name"
                 />
-                {errors.fullName && (
+                {errors.name && ( // Changed errors.fullName to errors.name
                   <div className="flex items-center gap-2 mt-2 text-red-600 text-sm">
                     <span className="w-4 h-4 rounded-full bg-red-100 flex items-center justify-center text-xs">!</span>
-                    {errors.fullName}
+                    {errors.name}
                   </div>
                 )}
               </div>

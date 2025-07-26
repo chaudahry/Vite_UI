@@ -185,14 +185,14 @@ const AuthPage: React.FC = () => {
         
         setUser(userData);
         localStorage.setItem('epochfolio_user', JSON.stringify(userData));
-        
+
         if (response.role_set) {
           setIsAuthenticated(true);
           setCurrentPage('dashboard');
         } else {
           setCurrentPage('userInfo');
         }
-        
+
         setOtpSent(false);
         setPendingUser(null);
         setOtp('');
@@ -210,7 +210,7 @@ const AuthPage: React.FC = () => {
 
   const handleForgotPassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.forgotEmail) {
       setErrors({ forgotEmail: 'Email is required' });
       return;
@@ -219,7 +219,7 @@ const AuthPage: React.FC = () => {
     setIsLoading(true);
     try {
       await authAPI.forgotPassword(formData.forgotEmail);
-      
+
       setResetEmail(formData.forgotEmail);
       setOtpAction('reset_password');
       setOtpSent(true);
@@ -235,7 +235,7 @@ const AuthPage: React.FC = () => {
 
   const handlePasswordReset = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validatePasswordReset()) return;
 
     setIsLoading(true);

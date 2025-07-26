@@ -5,12 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76ca4300-3f65-459d-9881-81b56dba5443" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/text_processor.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/text_processor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AppRouter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AppRouter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/AuthPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/AuthPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/CandidateResults.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/CandidateResults.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/components/SignIn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/SignIn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/components/UserInfoCollection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/components/UserInfoCollection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/context/AppContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/context/AppContext.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -19,7 +21,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/frontend" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
