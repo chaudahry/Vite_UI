@@ -19,6 +19,9 @@ from appwrite.services.databases import Databases
 from appwrite.services.storage import Storage
 from appwrite.query import Query
 from appwrite.exception import AppwriteException
+from appwrite.input_file import InputFile
+
+
 
 from mimetypes import guess_type
 
@@ -564,19 +567,35 @@ def upload_resumes():
         if file.filename == '':
             continue
 
+        # --- START OF CHANGES ---
+
         original_filename = file.filename
-        unique_filename = f"{uuid.uuid4()}_{original_filename}"
-        filepath_local = os.path.join(app.config['UPLOAD_FOLDER'], unique_filename)
-        file.save(filepath_local) # Save locally first for processing
+        # Get the file extension (e.g., ".pdf")
+        file_extension = os.path.splitext(original_filename)[1]
+
+        # Create a clean, unique ID that follows Appwrite's rules.
+        # A UUID is exactly 36 characters long.
+        appwrite_file_id = str(uuid.uuid4())
+
+        # Create a clean filename for saving locally
+        unique_local_filename = f"{appwrite_file_id}{file_extension}"
+        filepath_local = os.path.join(app.config['UPLOAD_FOLDER'], unique_local_filename)
+
+        file.save(filepath_local)
 
         try:
-            # Upload file to Appwrite Storage
-            with open(filepath_local, 'rb') as f:
-                appwrite_file = appwrite_storage.create_file(
-                    bucket_id=APPWRITE_BUCKET_RESUMES_ID,
-                    file_id=unique_filename,
-                    file=(original_filename, f)
-                )
+            # Prepare the file for upload
+            input_file = InputFile.from_path(filepath_local)
+
+            # Upload file to Appwrite Storage using the clean ID
+            appwrite_file = appwrite_storage.create_file(
+                bucket_id=APPWRITE_BUCKET_RESUMES_ID,
+                file_id=appwrite_file_id,  # Use the clean UUID here
+                file=input_file
+            )
+
+            # --- END OF CHANGES ---
+
             file_storage_id = appwrite_file['$id']
             file_storage_path = f"{APPWRITE_ENDPOINT}/storage/buckets/{APPWRITE_BUCKET_RESUMES_ID}/files/{file_storage_id}/view?project={APPWRITE_PROJECT_ID}"
 
@@ -588,8 +607,8 @@ def upload_resumes():
             resume_id = generate_id()
             insert_data = {
                 'filename': original_filename,
-                'filepath': file_storage_path, # Store Appwrite file URL
-                'appwrite_file_id': file_storage_id, # Store Appwrite file ID for direct access
+                'filepath': file_storage_path,  # Store Appwrite file URL
+                'appwrite_file_id': file_storage_id,  # Store Appwrite file ID for direct access
                 'raw_text': raw_text,
                 'processed_text': processed_text,
                 'extracted_skills': extracted_skills,
@@ -598,7 +617,7 @@ def upload_resumes():
             new_resume_doc = appwrite_databases.create_document(
                 database_id=APPWRITE_DATABASE_ID,
                 collection_id=APPWRITE_COLLECTION_RESUMES_ID,
-                document_id=resume_id, # Use generated ID as document ID
+                document_id=resume_id,  # Use generated ID as document ID
                 data=insert_data
             )
             uploaded_resume_ids.append(resume_id)
@@ -618,16 +637,8 @@ def upload_resumes():
             # Clean up locally saved file after processing/upload
             if os.path.exists(filepath_local):
                 os.remove(filepath_local)
-        #new code
-        try:
-            raw_text = extract_text_from_file(filepath_local)
-        except ValueError as ve:
-            print(f"Unsupported file type: {original_filename}")
-            os.remove(filepath_local)
-            return jsonify({"message": str(ve)}), 400
 
     return jsonify({"message": "Resumes uploaded and processed", "resume_ids": uploaded_resume_ids}), 200
-
 
 @app.route('/api/screen_resumes', methods=['POST'])
 def screen_resumes():
